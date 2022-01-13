@@ -215,6 +215,20 @@ module Teamtailor
       ).call
     end
 
+    def custom_field_options(page: 1, include: [])
+      Teamtailor::Request.new(
+        base_url: base_url,
+        api_token: api_token,
+        api_version: api_version,
+        path: "/v1/custom-field-options",
+        params: {
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
+        }
+      ).call
+    end
+
     def referrals(page: 1, include: [])
       Teamtailor::Request.new(
         base_url: base_url,

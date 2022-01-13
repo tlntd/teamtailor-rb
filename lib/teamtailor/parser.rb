@@ -11,6 +11,7 @@ require "teamtailor/parser/department"
 require "teamtailor/parser/location"
 require "teamtailor/parser/custom_field"
 require "teamtailor/parser/custom_field_value"
+require "teamtailor/parser/custom_field_option"
 require "teamtailor/parser/referral"
 require "teamtailor/parser/partner_result"
 require "teamtailor/parser/requisition"
@@ -38,6 +39,7 @@ module Teamtailor
         when "custom-fields" then Teamtailor::CustomField.new(record, included)
         when "custom-field-selects" then Teamtailor::CustomField.new(record, included)
         when "custom-field-values" then Teamtailor::CustomFieldValue.new(record, included)
+        when "custom-field-options" then Teamtailor::CustomFieldOption.new(record, included)
         when "referrals" then Teamtailor::Referral.new(record, included)
         when "partner-results" then Teamtailor::PartnerResult.new(record, included)
         when "requisitions" then Teamtailor::Requisition.new(record, included)
